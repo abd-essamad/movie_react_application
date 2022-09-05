@@ -1,0 +1,13 @@
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 0;
+}
+.spinner img {
+    width: 200px;
+    height: 200px;
+}
