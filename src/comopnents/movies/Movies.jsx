@@ -1,57 +1,42 @@
 import './movies.css' 
+import { useEffect, useState } from 'react'
 import logo from '../../assets/images/back2.png'
 const Movies = () => {
-  return (
-    <div className='movies'>
-      <div className='movies__item'>
-        <img src={logo} alt="" />
-        <h3>Movie Name</h3>
-         <p>
-           8.9
-         </p>
-      </div>
+  const [movies, setMovies] = useState([])
+  const [loading, setLoading] =useState(true)
+   useEffect(()=>{
+      fetchMovies()
+   },[])
 
-      <div className='movies__item'>
-        <img src={logo} alt="" />
-        <h3>Movie Name</h3>
-         <p>
-           8.9
-         </p>
-      </div>
+  const fetchMovies = async()=>{
+    const response = await fetch(`${process.env.REACT_APP_MOVIEDB_URL}`)
 
-      <div className='movies__item'>
-        <img src={logo} alt="" />
-        <h3>Movie Name</h3>
-         <p>
-           8.9
-         </p>
-      </div>
+    const data = await response.json()
+    setMovies(data.results)
+    setLoading(false)
+    console.log(data.results)
+  }
 
-      <div className='movies__item'>
-        <img src={logo} alt="" />
-        <h3>Movie Name</h3>
-         <p>
-           8.9
-         </p>
+  if(!loading){
+    return (
+    
+      <div className='movies'>
+        {movies.map(movie =>(
+        <div className='movies__item' key={movie.id}>
+          <img src={`${process.env.REACT_APP_IMAGE_PATH + movie.poster_path}`} alt="" />
+          <h3>{movie.original_title}</h3>
+           <p style={{color: movie.vote_average > 7 ? 'yellow' : 'red' }}>
+             {movie.vote_average}
+           </p>
+        </div>
+        ))}
       </div>
+    )
+  }else {
+    <h3>Loading...</h3>
+  }
 
-      <div className='movies__item'>
-        <img src={logo} alt="" />
-        <h3>Movie Name</h3>
-         <p>
-           8.9
-         </p>
-      </div>
-
-      <div className='movies__item'>
-        <img src={logo} alt="" />
-        <h3>Movie Name</h3>
-         <p>
-           8.9
-         </p>
-      </div>
-    </div>
-  )
+  
 }
 
 export default Movies

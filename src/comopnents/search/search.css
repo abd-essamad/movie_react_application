@@ -3,32 +3,38 @@
     align-items: center;
     justify-content: center;
     position: absolute;
+    height: 50px;
     top: 50%;
     left: 30%;
 }
 .search input[type="text"] {
     padding: 15px 20px;
     width: 400px;
+    height: 100%;
     outline: 0;
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 .search input[type="text"]:focus {
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     border-right: none;
 }
 
 .search button {
     padding: 15px 15px;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--primary-color);
     background-color: #000;
+    height: 100%;
     outline: none;
     border: none;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;
 
+}
+.search button:hover {
+    background-color: rgb(50, 49, 49);
 }
