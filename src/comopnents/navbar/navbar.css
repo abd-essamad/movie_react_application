@@ -55,7 +55,7 @@
     transition: .4s;
     transition: .4s;
     font-weight: bold;
-    box-shadow: 3px 3px 20px var(--primary-color);
+    box-shadow: 1px 1px 5px var(--primary-color);
 
 }
 .navbar .link .signin:hover {
