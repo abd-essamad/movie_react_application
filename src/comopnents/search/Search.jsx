@@ -1,13 +1,36 @@
 import './search.css'
+import {toast} from 'react-toastify'
+import { useState, useContext, useEffect } from 'react'
+import MovieShowContext from '../../context/movieshow/MovieShowContext'
 const Search = () => {
-  return (
+  const [text, setText] = useState('')
+  const {movies, searchMovies} = useContext(MovieShowContext)
+  const handleChange = (e)=>{
+     setText(e.target.value)
+  }
+
+  const handleSubmit = (e)=>{
+   e.preventDefault()
+   if(text === ''){
+    toast.error('Please enter a movie name')
+   }else {
+    /* */
+        searchMovies(text)
+        setText('')
+   }
+  }
+     return (
     <div className="search">
-      <input type="text" placeholder="Enter a movie..." />
-      <button>
+      <form onSubmit={handleSubmit}>
+      <input value={text} onChange={handleChange} type="text" placeholder="Enter a movie..." />
+      <button type='submit'>
         Search 
       </button>
+      </form>
     </div>
   )
+  
+ 
 }
 
 export default Search

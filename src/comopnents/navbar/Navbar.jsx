@@ -1,6 +1,6 @@
 import './navbar.css'
 import { Link } from 'react-router-dom'
-import {FaHome, FaViadeo, FaBlog} from 'react-icons/fa'
+import {FaHome} from 'react-icons/fa'
 const Navbar = () => {
   return (
     <nav className='navbar'>
@@ -12,10 +12,10 @@ const Navbar = () => {
           <Link className='link' to='/'> <div><FaHome/></div> <p>Home</p>  </Link>
           </li>
          <li>
-         <Link className='link' to='/about'> <div><FaViadeo/></div>  <p>About</p></Link>
+         <Link className='link' to='/about'> <div> <i class="fa-solid fa-circle-info"></i></div>  <p>Info</p></Link>
           </li>
          <li>
-          <Link className='link' to='/about'> <div><FaBlog/></div>  <p>Contact</p></Link>
+          <Link className='link' to='/signin'> <div className='signin'>Sign In</div></Link>
          </li>
        </ul>
     </nav>
