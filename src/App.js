@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from './comopnents/footer/Footer'
 import NotFound from './pages/notfound/NotFound'
 import Trailer from './comopnents/movies/Trailer';
+import NewMovies from './comopnents/movies/new/NewMovies';
 import Home from './pages/home/Home'
 import { BrowserRouter as  Router, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -24,7 +25,8 @@ function App() {
           <Route path='/*' element={<NotFound />}  />
           <Route path='/movie/:id' element={<MovieProfile />}  />
           <Route path='/trailer/:id' element={<Trailer />}  />
-        
+          <Route path='/best' element={<NewMovies />}  />
+          
       </Routes>
       </div>
       

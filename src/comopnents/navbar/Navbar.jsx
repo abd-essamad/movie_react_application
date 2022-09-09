@@ -17,7 +17,7 @@ const Navbar = () => {
          <Link className='link' to='/about'> <div> <i className="fa-solid fa-circle-info"></i></div>  <p>Info</p></Link>
           </li>
          <li>
-         <Link className='link' to='/new'> <div><FaFire/></div> <p>New</p>  </Link>
+         <Link className='link' to='/best'> <div><FaFire/></div> <p>Best</p>  </Link>
          </li>
        </ul>
     </nav>

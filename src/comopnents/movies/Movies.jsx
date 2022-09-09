@@ -1,7 +1,6 @@
 import './movies.css' 
 import { useEffect, useContext } from 'react'
 import Spinner from '../spinner/Spinner'
-import logo from '../../assets/images/back2.png'
 import Movie from './Movie'
 import MovieShowContext from '../../context/movieshow/MovieShowContext'
 const Movies = () => {
