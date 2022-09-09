@@ -3,15 +3,17 @@ import MovieShowReducer from "./MovieShowReducer";
 const MovieShowContext = createContext()
 
 const MovieShow_URL = process.env.REACT_APP_MOVIEDB_URL
-const MovieSearch_URL = process.env.REACT_APP_SEARCH_URL
+
 
 export const MovieShowProvider = ({children}) =>{
     const initialState = {
         movies: [],
+        movie:{},
         loading: true
     }
     const [state, dispatch] = useReducer(MovieShowReducer, initialState)
   
+    //search movies
   const searchMovies = async(term)=>{
     
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=9f126a85b004a4abac0345f69ea2a4f5&query=${term}`)
@@ -21,9 +23,22 @@ export const MovieShowProvider = ({children}) =>{
       type: 'SEARCH_MOVIES',
       payload: data.results
   })
-  console.log(data.results)
   }
+  
+  //get single movie
+  const getMovie = async(id)=>{
     
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=9f126a85b004a4abac0345f69ea2a4f5`)
+    
+    const data = await response.json()
+    dispatch({
+      type: 'GET_MOVIE',
+      payload: data
+  })
+  console.log(data)
+  }
+  
+  //fetch movies
   const fetchMovies = async()=>{
     const response = await fetch(`${MovieShow_URL}`)
 
@@ -39,8 +54,12 @@ export const MovieShowProvider = ({children}) =>{
   return <MovieShowContext.Provider value={{
     movies: state.movies,
     loading: state.loading,
+    movie:state.movie,
     fetchMovies,
-    searchMovies
+    searchMovies,
+    getMovie
+
+   
   }}>
        {children}
   </MovieShowContext.Provider>

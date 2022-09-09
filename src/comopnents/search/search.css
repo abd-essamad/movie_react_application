@@ -5,7 +5,9 @@
     position: absolute;
     height: 50px;
     top: 50%;
-    left: 30%;
+    left: 50%;
+    right: 50%;
+    transform: translateY(-50%);
 }
 .search input[type="text"] {
     padding: 15px 20px;
@@ -39,4 +41,20 @@
 }
 .search button:hover {
     background-color: rgb(50, 49, 49);
+}
+form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+@media screen and (max-width: 600px) {
+    form {
+        width: 30px;
+    }
+    form button{
+       font-size: 13px;
+
+    }
 }

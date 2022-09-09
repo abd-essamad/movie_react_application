@@ -16,7 +16,6 @@
     flex-direction: column;
     width: 200px;
     height: 260px;
-    border: 1px solid var(--primary-color);
     background-color: black;
     position: relative;
     margin-bottom: 20px;
@@ -94,4 +93,9 @@
     border-radius: 50%;
     box-shadow: 0 3px 12px var(--primary-color);
     
+}
+@media screen and (max-width: 600px) {
+    .movies{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

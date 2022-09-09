@@ -8,7 +8,7 @@ import Home from './pages/home/Home'
 import { BrowserRouter as  Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { MovieShowProvider } from './context/movieshow/MovieShowContext'
-
+import MovieProfile from './comopnents/movies/MovieProfile';
 function App() {
   return (
     <MovieShowProvider>
@@ -21,6 +21,7 @@ function App() {
           <Route path='/' element={<Home />}  />
           <Route path='/about' element={<About />}  />
           <Route path='/*' element={<NotFound />}  />
+          <Route path='/movie/:id' element={<MovieProfile />}  />
       </Routes>
       </div>
       

@@ -1,0 +1,161 @@
+.movieProfile {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100%;
+    margin: 1rem 10rem;
+}
+.movieProfile .top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+
+}
+.top_img {
+    width: 200px;
+    height: 200px;
+    margin-right: 3rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px rgb(104, 99, 99);
+    transition: transform 300ms ease-in;
+}
+.top_img:hover {
+    transform: scale(1.05);
+    transition: transform 300ms ease-in;
+}
+.top_img img {
+    width: 100%;
+    height: 100%;
+}
+.movieProfile .top_right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    
+}
+.movieProfile .top_right div {
+    margin-top: 1rem;
+}
+.top_right_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.top_right_title p {
+    margin-left: 2rem;
+    background-color:rgb(48, 44, 44);
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+.top_right_title .drama {
+    color: rgb(42, 200, 214);
+    text-shadow: 1px 1px 20px rgb(42, 200, 214);
+}
+.top_right_title .mystery {
+    color: rgb(214, 13, 13);
+    text-shadow: 1px 1px 20px rgb(200, 67, 67);
+}
+.top_right_title .romance {
+    color: rgb(146, 233, 146);
+    text-shadow: 1px 1px 20px rgb(146, 233, 146);
+}
+.top_right_links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.top_right_links a {
+    margin-right: 2rem;
+    color: #000;
+    padding: 6px 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-size: 18px;
+}
+.top_right_links a:hover {
+    transform: scale(1.08);
+    transition: transform 300ms ease;
+}
+.top_right_links a:first-child {
+    background-color: #fff;
+}
+.top_right_links a:last-child {
+    background-color: rgb(138, 224, 138);
+    
+}
+.top_right_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.top_right_bottom div {
+    margin-right: 1.5rem;
+}
+.top_right_bottom .info p {
+    margin-top: 0.5rem;
+    font-size: 14px;
+}
+.muted-text {
+    color: rgb(138, 124, 124);
+}
+.movieProfile .center {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 3rem;
+    box-shadow: 2px 2px 10px rgb(48, 44, 44);
+    padding: 5px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+.movieProfile .center .box {
+    margin-right: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-left: 1px solid rgb(48, 44, 44);
+    padding-left: 10px;
+    
+}
+
+.movieProfile .center .box .icon {
+    color: var(--primary-color);
+}
+.movieProfile .center .box:first-child {
+    border: none;
+}
+.movieProfile .center .left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-right: 2rem;
+    
+}
+.movieProfile .center .left p {
+    margin-top: 0.5rem;
+}
+.movieProfile .bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.movieProfile .bottom h1 {
+    font-size: 22px;
+}
+.movieProfile .bottom p {
+    margin-top: 0.5rem;
+    font-size: 13px;
+    text-align: left;
+    line-height: 1.3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 0.5px solid rgb(48, 44, 44);
+    padding: 10px;
+    box-shadow: 1px 1px 3px rgb(48, 44, 44);
+}
