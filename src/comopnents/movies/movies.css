@@ -4,9 +4,9 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
-    width: 100%;
     min-height: 500px;
     position: relative;
+    margin-bottom: 1rem;
     
 }
 .movies__item {

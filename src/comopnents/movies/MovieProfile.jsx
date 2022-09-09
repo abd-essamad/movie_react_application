@@ -9,10 +9,7 @@ const MovieProfile = () => {
    useEffect(()=>{
       getMovie(params.id)
    },[])
-   /*
-   if you are wondering why i put this genres in array and not fetching them from the API
-  becauste some movie doesn't have the genred field !!
-   */
+   
     const genres = ['Drama','Thrill', 'Action'] 
     
   return (
@@ -36,8 +33,7 @@ const MovieProfile = () => {
           </div>
          
           <div className="top_right_links">
-          <Link to={`/trailer/${movie.id}`}>watch</Link>
-          <Link to=''>download</Link>
+          <Link to={`/trailer/${movie.id}`}>watch Trailer</Link>
           </div>
           <div className="top_right_bottom">
              <div className="info">

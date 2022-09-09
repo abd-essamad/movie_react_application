@@ -12,6 +12,12 @@ const MovieShowReducer = (state, action)=>{
                 movie: action.payload,
                 loading: false
             }
+        case 'GET_TRAILER':
+            return {
+                ...state,
+                trailer:action.payload,
+                loading: false
+            }
         case 'SEARCH_MOVIES':
             return {
                 ...state,

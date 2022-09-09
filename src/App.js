@@ -24,6 +24,7 @@ function App() {
           <Route path='/*' element={<NotFound />}  />
           <Route path='/movie/:id' element={<MovieProfile />}  />
           <Route path='/trailer/:id' element={<Trailer />}  />
+        
       </Routes>
       </div>
       

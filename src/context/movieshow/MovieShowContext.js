@@ -9,6 +9,7 @@ export const MovieShowProvider = ({children}) =>{
     const initialState = {
         movies: [],
         movie:{},
+        trailer:{},
         loading: true
     }
     const [state, dispatch] = useReducer(MovieShowReducer, initialState)
@@ -35,6 +36,18 @@ export const MovieShowProvider = ({children}) =>{
       type: 'GET_MOVIE',
       payload: data
   })
+
+  }
+  // get Trailer
+  const getTrailer = async(id)=>{
+    
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=9f126a85b004a4abac0345f69ea2a4f5&append_to_response=videos`)
+    
+    const data = await response.json()
+    dispatch({
+      type: 'GET_TRAILER',
+      payload: data
+  })
   console.log(data)
   }
   
@@ -48,16 +61,18 @@ export const MovieShowProvider = ({children}) =>{
         type: 'GET_MOVIES',
         payload: data.results
     })
-    console.log(data.results)
+  
   }
 
   return <MovieShowContext.Provider value={{
     movies: state.movies,
     loading: state.loading,
+    trailer: state.trailer,
     movie:state.movie,
     fetchMovies,
     searchMovies,
-    getMovie
+    getMovie,
+    getTrailer
 
    
   }}>

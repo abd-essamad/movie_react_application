@@ -1,10 +1,10 @@
 import './search.css'
 import {toast} from 'react-toastify'
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import MovieShowContext from '../../context/movieshow/MovieShowContext'
 const Search = () => {
   const [text, setText] = useState('')
-  const {movies, searchMovies} = useContext(MovieShowContext)
+  const { searchMovies} = useContext(MovieShowContext)
   const handleChange = (e)=>{
      setText(e.target.value)
   }
@@ -19,6 +19,7 @@ const Search = () => {
         setText('')
    }
   }
+
      return (
     <div className="search">
       <form onSubmit={handleSubmit}>

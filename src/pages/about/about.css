@@ -1,3 +1,21 @@
 .about {
-    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 16.5rem ;
+    margin-top: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+.about h2,.about p {
+  margin-top: 1rem ;
+ 
+  
+}
+.about a{
+  color: rgb(102, 158, 189);
+}
+.about p {
+    line-height: 1.5rem;
 }
