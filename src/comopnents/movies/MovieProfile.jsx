@@ -27,16 +27,16 @@ const MovieProfile = () => {
           <div className="top_right_title">
             <h1>{movie.original_title}</h1>
            
-            <p className="drama">{genres[0]}</p>
-            <p className="mystery">{genres[1]}</p>
-            <p className="romance">{genres[2]}</p> 
+            {movie.genres ? <p className="drama">{movie.genres[0].name}</p> : <p className="drama">{genres[0]}</p>}
+            {movie.genres && movie.genres.length > 1 ? <p className="mystery">{movie.genres[1].name}</p> : <p className="mystery">{genres[1]}</p>}
+            {movie.genres && movie.genres.length > 2 ? <p className="romance">{movie.genres[2].name}</p> : <p className="romance">{genres[2]}</p>}
             
             
             
           </div>
          
           <div className="top_right_links">
-          <Link to=''>watch</Link>
+          <Link to={`/trailer/${movie.id}`}>watch</Link>
           <Link to=''>download</Link>
           </div>
           <div className="top_right_bottom">
