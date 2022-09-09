@@ -1,7 +1,7 @@
 import { useContext,useEffect } from "react"
 import './movieprofile.css'
 import { useParams , Link } from "react-router-dom"
-import { FaHome } from "react-icons/fa"
+import { FaDollarSign,FaUsers,FaArrowCircleUp,FaStar } from "react-icons/fa"
 import MovieShowContext from "../../context/movieshow/MovieShowContext"
 const MovieProfile = () => {
   const {movie, loading, getMovie} = useContext(MovieShowContext)
@@ -13,10 +13,8 @@ const MovieProfile = () => {
    if you are wondering why i put this genres in array and not fetching them from the API
   becauste some movie doesn't have the genred field !!
    */
-    const genres = ['Drama', 'Romance','Thrill', 'Action'] 
-    const fetchRandomGenres = ()=>{
-      return Math.floor(Math.random()  * genres.length )
-    }
+    const genres = ['Drama','Thrill', 'Action'] 
+    
   return (
     <div className="movieProfile">
       <div className="top">
@@ -29,9 +27,9 @@ const MovieProfile = () => {
           <div className="top_right_title">
             <h1>{movie.original_title}</h1>
            
-            <p className="drama">{genres[fetchRandomGenres()]}</p>
-            <p className="mystery">{genres[fetchRandomGenres()]}</p>
-            <p className="romance">{genres[fetchRandomGenres()]}</p> 
+            <p className="drama">{genres[0]}</p>
+            <p className="mystery">{genres[1]}</p>
+            <p className="romance">{genres[2]}</p> 
             
             
             
@@ -62,9 +60,9 @@ const MovieProfile = () => {
         <div className="box">
           <div className="left">
             <p className="muted-text">revenue</p>
-              <p>{movie.revenue}</p> 
+              <p>{movie.revenue + '$'}</p> 
           </div>
-          <FaHome className="icon"/>
+          <FaDollarSign className="icon"/>
         </div>
 
         <div className="box">
@@ -72,7 +70,7 @@ const MovieProfile = () => {
             <p className="muted-text">popularity</p>
             <p>{movie.popularity}</p> 
           </div>
-          <FaHome className="icon"/>
+          <FaUsers className="icon"/>
         </div>
 
         <div className="box">
@@ -80,7 +78,7 @@ const MovieProfile = () => {
             <p className="muted-text">vote count</p>
             <p>{movie.vote_count}</p> 
           </div>
-          <FaHome className="icon"/>
+          <FaArrowCircleUp className="icon"/>
         </div>
 
         <div className="box">
@@ -88,7 +86,7 @@ const MovieProfile = () => {
             <p className="muted-text">vote average</p>
             <p>{movie.vote_average}</p> 
           </div>
-          <FaHome className="icon"/>
+          <FaStar className="icon"/>
         </div>
       </div>
 

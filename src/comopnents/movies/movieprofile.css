@@ -124,6 +124,7 @@
 
 .movieProfile .center .box .icon {
     color: var(--primary-color);
+    font-size: 20px;
 }
 .movieProfile .center .box:first-child {
     border: none;
