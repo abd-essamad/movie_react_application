@@ -1,7 +1,8 @@
 import './newmovies.css'
-import { useState,useEffect, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import {FaStar} from 'react-icons/fa'
 import BestMovie from './BestMovie'
+import Spinner from '../../spinner/Spinner'
 import MovieShowContext from '../../../context/movieshow/MovieShowContext'
 function NewMovies() {
   const { getBestMovies,best,loading} = useContext(MovieShowContext)
@@ -22,7 +23,9 @@ function NewMovies() {
     </>
   )
   }else {
-     return <h2>loading....</h2>
+     return <div className='movies'>
+             <Spinner />
+            </div>
   }
 }
 

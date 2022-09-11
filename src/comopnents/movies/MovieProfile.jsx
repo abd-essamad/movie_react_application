@@ -4,11 +4,11 @@ import { useParams , Link } from "react-router-dom"
 import { FaDollarSign,FaUsers,FaArrowCircleUp,FaStar } from "react-icons/fa"
 import MovieShowContext from "../../context/movieshow/MovieShowContext"
 const MovieProfile = () => {
-  const {movie, loading, getMovie} = useContext(MovieShowContext)
+  const {movie, getMovie} = useContext(MovieShowContext)
   const params =useParams()
    useEffect(()=>{
       getMovie(params.id)
-   },[])
+   },[getMovie,params.id])
    
     const genres = ['Drama','Thrill', 'Action'] 
     
@@ -42,7 +42,8 @@ const MovieProfile = () => {
              </div>
              <div className="info">
                <p className="muted-text">original language</p>
-               <p>{movie.original_language ==='en' ? 'English' : 'francais'}</p>
+               <p>{movie.original_language ==='en' ? 'English'
+               : movie.original_language === 'fr' ? 'francais': 'other'}</p>
              </div>
              <div className="info">
                <p className="muted-text">budget</p>
@@ -56,7 +57,7 @@ const MovieProfile = () => {
         <div className="box">
           <div className="left">
             <p className="muted-text">revenue</p>
-              <p>{movie.revenue + '$'}</p> 
+              {movie.revenue ? <p>{movie.revenue + '$'}</p> : 'unkown' }
           </div>
           <FaDollarSign className="icon"/>
         </div>

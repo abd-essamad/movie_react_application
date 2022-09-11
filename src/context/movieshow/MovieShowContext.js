@@ -60,7 +60,7 @@ export const MovieShowProvider = ({children}) =>{
       type: 'GET_BEST',
       payload: data.results
   })
-  console.log(data)
+
   }
   //fetch movies
   const fetchMovies = async()=>{
