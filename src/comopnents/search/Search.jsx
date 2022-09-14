@@ -1,6 +1,6 @@
 import './search.css'
 import {toast} from 'react-toastify'
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import MovieShowContext from '../../context/movieshow/MovieShowContext'
 const Search = () => {
@@ -19,7 +19,7 @@ const Search = () => {
     /* */
         searchMovies(text)
         setText('')
-        if(movies.length == 0){
+        if(movies.length === 0){
           toast.error('there is no movie with this name');
           navigate('/');
           

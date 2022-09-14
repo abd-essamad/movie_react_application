@@ -7,7 +7,7 @@ const Movies = () => {
   const {movies, loading, fetchMovies} = useContext(MovieShowContext)
    useEffect(()=>{
       fetchMovies()
-   },[])
+   },[fetchMovies])
    
   
   if(!loading){

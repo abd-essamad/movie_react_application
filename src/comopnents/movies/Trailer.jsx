@@ -9,7 +9,7 @@ const Trailer = () => {
   const params =useParams()
    useEffect(()=>{
       getTrailer(params.id)
-   },[])
+   },[getTrailer,params.id])
    
 
   if(!loading){
@@ -17,6 +17,7 @@ const Trailer = () => {
     
     <div className='trailer'>
       <h2>{trailer.original_title}</h2>
+     {/* eslint-disable-next-line*/}
       {trailer.videos.results.length !== 0 ? <iframe width="420" height="315"
            src={`https://www.youtube.com/embed/${trailer.videos.results[0].key}`}>
         </iframe>

@@ -8,7 +8,7 @@ function NewMovies() {
   const { getBestMovies,best,loading} = useContext(MovieShowContext)
   useEffect(()=>{
     getBestMovies()
- },[])
+ },[getBestMovies])
 
  if(!loading){
   return (
